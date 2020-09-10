@@ -9,9 +9,9 @@ const bd = require('../../config/bd');
 //E sim no servidor
 module.exports = (app) =>{
     app.get('/', function(req, resp){
-        /*bd.all('SELECT * FROM TAREFAS', (erro, resultados) => {
-            console.log(resultados);
-        })*/
-        resp.send(pagina);
+        bd.all('SELECT * FROM TAREFAS', (erro, resultados) => {
+            resp.send(pagina(resultados)); 
+        });
+        
     });
 };

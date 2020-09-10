@@ -5,7 +5,7 @@ const sqlite3 = require('sqlite3').verbose();
 const db = new sqlite3.Database('database.db');
 
 //Executa as instruções em fila, em modo serializado
-db.serialize(()=>{
+/*db.serialize(()=>{
     //Cria uma tabela no meu banco de dados
     db.run(`CREATE TABLE IF NOT EXISTS TAREFAS ( 
         id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -26,11 +26,11 @@ db.serialize(()=>{
     `);
 
     //Consulta os elementos adicionados no banco de dados
-    db.each("SELECT * FROM TAREFAS", (erro, tarefa) => {
+    /*db.each("SELECT * FROM TAREFAS", (erro, tarefa) => {
         console.log('tarefa: ');
         console.log(tarefa);
     });
-});
+});*/
 
 //Encerra banco de dados
 process.on('SIGINT', () => {
