@@ -1,16 +1,18 @@
-function paginaTodo(tarefas){
+function paginaTodo(tarefas) {
 
     //ínicia sempre com os cards vazios para depois serem preenchidos
     let cardsTarefas = '';
 
     //Laço de repetição que para cada tarefa cria um card com suas descrições
-    for(let i = 0; i < tarefas.length; i++){
+    for (let i = 0; i < tarefas.length; i++) {
         cardsTarefas += `<div class="card m-5" style="width: 18rem;">
-                            <div class="card-body">
+                            <div class="card-body" data-id-tarefa="${tarefas[i].id}">
                                 <h5 class="card-title">${tarefas[i].titulo}</h5>
                                 <p class="card-text">${tarefas[i].descricao}</p>
+                                <button type="button" class="btn btn-primary btn-sm">Editar</button>
+                                <button type="button" class="btn btn-secondary btn-sm">Arquivar</button>
                             </div>
-                         </div>`;  
+                         </div>`;
     };
 
     return `<!DOCTYPE html>
@@ -44,14 +46,16 @@ function paginaTodo(tarefas){
             <!-- Aqui entram os cards de TODO!-->
             ${cardsTarefas}
 </div>
+
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="../public/deleta-tarefas.js" ></script>
 </body>
 </html>`;
-} 
+}
 
 module.exports = paginaTodo; //Tornando o template exportável para outros scripts
 
-
+//'../public/deleta-tarefas'
 //Obs.: Ao exportar um script, tornamos acessíveis suas funções, variáveis e tudo que estiver dentro.
