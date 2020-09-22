@@ -2,7 +2,7 @@
 //Ir no template e adicionar um parâmetro de dados no html 
 //Referênciar  a função no html
 //Dar evento de target nas tarefas
-function deleta(id) {
+function deleta(event) {
     console.log("deletado!");
-    console.log(id);
+    console.log(event.target.name);
 }
