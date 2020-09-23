@@ -1,19 +1,23 @@
 {
-  "name": "noderesilia",
-  "version": "1.0.0",
-  "description": "",
-  "main": "servidor.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon servidor.js"
-  },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "express": "^4.17.1",
-    "sqlite3": "^5.0.0"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.4"
-  }
+    "name": "noderesilia",
+    "version": "1.0.0",
+    "description": "",
+    "main": "servidor.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "nodemon servidor.js"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "cors": "^2.8.5",
+        "express": "^4.17.1",
+        "sqlite3": "^5.0.0"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.4"
+    },
+    "engines": {
+        "node": "v12.18.3"
+    }
 }

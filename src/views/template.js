@@ -6,7 +6,7 @@ function paginaTodo(tarefas) {
     //Laço de repetição que para cada tarefa cria um card com suas descrições
     for (let i = 0; i < tarefas.length; i++) {
         cardsTarefas += `<div class="card m-5" style="width: 18rem;">
-                            <div class="card-body" data-id-tarefa="${tarefas[i].id}">
+                            <div class="card-body" data-id="${tarefas[i].id}">
                                 <h5 class="card-title">${tarefas[i].titulo}</h5>
                                 <p class="card-text">${tarefas[i].descricao}</p>
                                 <button type="button" class="btn btn-primary btn-sm">Editar</button>
