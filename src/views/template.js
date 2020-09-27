@@ -10,7 +10,7 @@ function paginaTodo(tarefas) {
                                 <h5 class="card-title">${tarefas[i].titulo}</h5>
                                 <p class="card-text">${tarefas[i].descricao}</p>
                                 <button type="button" class="btn btn-primary btn-sm">Editar</button>
-                                <button type="button" class="btn btn-secondary btn-sm" name="botaozinho"onclick="deleta(event)">Arquivar</button>
+                                <button type="button" class="btn btn-secondary btn-sm" name="botaozinho" onclick="deleta(event)">Arquivar</button>
                             </div>
                          </div>`;
     };

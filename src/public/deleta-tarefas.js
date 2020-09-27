@@ -2,29 +2,17 @@
      //Evento que pega o seu alvo, acessa o pai dele, e em seguida acessa seu dataset que é o meu id
      let idTarefa = event.target.parentNode.dataset.id;
      let cardBody = event.target.parentNode;
+     const url = "http://localhost:3000/";
      console.log(idTarefa);
      console.log(cardBody);
 
-     let myHeaders = new Headers();
-     let verbo = {
-         method: 'DELETE',
-         headers: myHeaders,
-         mode: 'cors',
-         cache: 'default'
-     };
-
-
-     fetch('/:${idTarefa}', verbo)
-         .then((response) => {
-             if (response.ok) {
-                 console.log("response is ok");
-                 return response;
-             } else {
-                 console.log("response isn´t ok")
+     //Fazer uma requisição ao banckend para excluir o card
+     fetch(url + idTarefa, {
+             method: 'DELETE',
+             headers: {
+                 'Content-type': 'application/json; charset=UTF-8'
              }
          })
-         .catch((error) => {
-             console.log(error);
-         })
-
+         .then((resp) => { console.log(resp); })
+         .catch((err) => { console.log(err); })
  }

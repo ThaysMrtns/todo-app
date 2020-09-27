@@ -1,6 +1,6 @@
 const express = require('express'); //Importação da biblioteca express como dependência do meu projeto
 const app = express(); //Executando sua função
-const port = process.env.PORT; //Porta
+const port = process.env.PORT || 3000; //Porta // ou porta 3000
 const cors = require('cors') //Cors
 
 const rotas = require('../todo-app/src/rotas/rotas-tarefas'); //Importação das tarefas do script rotas-tarefas
