@@ -13,7 +13,8 @@ module.exports = (app) => {
     app.use(BodyParser.json()); //Utilizando o Middleware
     app.use(cors()); //Utilizando o cors
 
-    app.get('/', function(req, resp) {
+    //Método get que gera o template da página html
+    app.get('/', (req, resp) => {
         bd.all('SELECT * FROM TAREFAS', (erro, resultados) => {
             //Instância da classe ListaTarefas que recebe o banco de dados
             const listaTarefas = new ListaTarefas(bd);
@@ -25,8 +26,19 @@ module.exports = (app) => {
         });
     });
 
+    //Método post 
+    app.post('/', (req, resp) => {
+        bd.run(`INSERT INTO TAREFAS (titulo, descricao, status) VALUES (?, ?, ?)`, [req.body.titulo, req.body.descricao, req.body.status],
+            (err) => {
+                if (err) {
+                    console.log("Erro ao inserir tarefas no banco de dados");
+                }
+            });
+        resp.send("Post concluido");
+    });
+
     //Método delete passar o id
-    app.delete('/:idTarefa', function(req, resp) {
+    app.delete('/:idTarefa', (req, resp) => {
         bd.run(`DELETE FROM TAREFAS WHERE id = ?`, [req.params.idTarefa]);
         resp.send("Delete concluido");
     });
