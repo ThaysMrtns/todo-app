@@ -13,6 +13,9 @@
                  'Content-type': 'application/json; charset=UTF-8'
              }
          })
-         .then((resp) => { console.log(resp); })
+         .then((resp) => {
+             console.log(resp);
+             cardBody.parentNode.removeChild(cardBody);
+         })
          .catch((err) => { console.log(err); })
  }
