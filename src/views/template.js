@@ -32,20 +32,20 @@ function paginaTodo(tarefas) {
         </nav>
         <div class="d-flex justify-content-center">
             <div class="w-50 p-4 border rounded shadow-sm"> 
-                <form class="flex-fill">
+                <form class="flex-fill" action="/adiciona" method="post">
                     <div class="form-group">
                         <label for="tituloTarefa"><b>Título:</b></label>
-                        <input type="text" class="form-control" id="tituloTarefa" placeholder="Título da tarefa">
+                        <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Título da tarefa">
                     </div>
                     <div class="form-group">
                         <label for="descricaoTarefa"><b>Descrição:</b></label>
-                        <textarea class="form-control" id="descricaoTarefa" rows="3" placeholder="Insira a descrição da tarefa"></textarea>
+                        <textarea class="form-control"  id="descricaoTarefa" name="descricao" rows="3" placeholder="Insira a descrição da tarefa"></textarea>
                     </div>
                     <div class="form-group">
                         <label for="statusTarefa"><b>Status:</b></label>
-                        <textarea class="form-control" id="statusTarefa" rows="1" placeholder="Insira o status da tarefa"></textarea>
+                        <textarea class="form-control" id="statusTarefa" name="status" rows="1" placeholder="Insira o status da tarefa"></textarea>
                     </div>
-                    <button type="button" class="btn btn-success" onclick="adiciona()">Adicionar tarefa</button>
+                    <button type="submit" class="btn btn-success">Adicionar tarefa</button>
                 </form>
             </div>
         </div>
@@ -64,6 +64,3 @@ function paginaTodo(tarefas) {
 }
 
 module.exports = paginaTodo; //Tornando o template exportável para outros scripts
-
-//'../public/deleta-tarefas'
-//Obs.: Ao exportar um script, tornamos acessíveis suas funções, variáveis e tudo que estiver dentro.

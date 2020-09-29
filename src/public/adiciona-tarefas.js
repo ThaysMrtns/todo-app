@@ -1,11 +1,17 @@
 function adiciona() {
     //Gera uma requisição via post com os dados do formulario
-    console.log("post! evento disparado");
-    let titulo = document.querySelector("#tituloTarefa");
-    let descricao = document.querySelector("#descricaoTarefa");
-    let status = document.querySelector("#statusTarefa");
-    console.log(titulo.value);
-    console.log(descricao.value);
-    console.log(status.value);
+    const url = "http://localhost:3000/adiciona";
 
+    let titulo = document.querySelector("#titulo");
+
+    fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8'
+            },
+        })
+        .then((resp) => {
+            console.log(resp);
+        })
+        .catch((err) => { console.log(err); })
 }

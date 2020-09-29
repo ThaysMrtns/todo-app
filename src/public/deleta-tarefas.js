@@ -3,8 +3,6 @@
      let idTarefa = event.target.parentNode.dataset.id;
      let cardBody = event.target.parentNode;
      const url = "http://localhost:3000/";
-     console.log(idTarefa);
-     console.log(cardBody);
 
      //Fazer uma requisição ao banckend para excluir o card
      fetch(url + idTarefa, {
